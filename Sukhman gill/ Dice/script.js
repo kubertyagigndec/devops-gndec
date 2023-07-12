@@ -9,14 +9,12 @@ let images = [
   let dice = document.querySelectorAll("img");
   
   function roll() {
-    dice.forEach(function(die) {
+    dice.forEach(function (die) {
       die.classList.add("shake");
     });
-  
-    setTimeout(function() {
-      dice.forEach(function(die) {
+    setTimeout(function () {
+      dice.forEach(function (die) {
         die.classList.remove("shake");
-        die.classList.add("rotate");
       });
       let dieOneValue = Math.floor(Math.random() * 6);
       let dieTwoValue = Math.floor(Math.random() * 6);
@@ -25,6 +23,8 @@ let images = [
       document.querySelector("#die-2").setAttribute("src", images[dieTwoValue]);
       document.querySelector("#total").innerHTML =
         "Your roll is " + (dieOneValue + 1 + dieTwoValue + 1);
-    }, 3000);
+    }, 500);
   }
+  
+  roll();
   
